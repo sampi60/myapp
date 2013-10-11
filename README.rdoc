@@ -11,14 +11,19 @@ Use:
 If experiencing any problems with using rake commands, ex:
       uninitialized constant Rake::DSL
 
+Or 
+      uninitialized constant Rake::AltSystem
+
 Then add to Rakefile:
 
-      require 'rake'
       require 'rake/dsl_definition'
+      require 'rake/alt_system'
+      require 'rake'
 
       module ::YourApplicationName
         class Application
           include Rake::DSL
+          include Rake::AltSystem
         end
       end
 
