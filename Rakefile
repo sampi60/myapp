@@ -4,14 +4,16 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'rake'
 require 'rake/dsl_definition'
+require 'rake/alt_system'
+require 'rake'
 
 Myapp::Application.load_tasks
 
 module ::Myapp
   class Application
     include Rake::DSL
+    include Rake::AltSystem
   end
 end
 
